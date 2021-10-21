@@ -1,0 +1,27 @@
+.movie-details {
+  min-height: 100vh;
+
+  &__back {
+    color: #fff;
+    text-decoration: none;
+    text-align: right;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &__item {
+    &:nth-child(1) {
+      grid-column: span 2;
+      grid-row: span 4;
+    }
+
+    grid-column: span 5;
+    grid-row: span 2;
+  }
+
+  &__header {
+    padding: 1rem;
+  }
+}

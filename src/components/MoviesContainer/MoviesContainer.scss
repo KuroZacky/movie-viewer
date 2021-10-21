@@ -1,0 +1,36 @@
+$gap-size: 1rem;
+$breakpoints: (
+  'small': 320px,
+  'medium': 768px,
+  'large': 1024px,
+) !default;
+
+.movies-container {
+  padding-top: 1rem;
+
+  &__gallery {
+    padding: $gap-size;
+    display: grid;
+    grid-gap: $gap-size;
+    grid-auto-flow: row dense;
+
+    @media all and (min-width: map-get($breakpoints, 'small')) {
+      $num-columns: 3;
+      grid-template-columns: repeat($num-columns, 1fr);
+    }
+
+    @media all and (min-width: map-get($breakpoints, 'medium')) {
+      $num-columns: 5;
+      grid-template-columns: repeat($num-columns, 1fr);
+    }
+
+    @media all and (min-width: map-get($breakpoints, 'large')) {
+      $num-columns: 8;
+      grid-template-columns: repeat($num-columns, 1fr);
+    }
+  }
+  &__messages {
+    grid-column: span 8;
+    grid-row: span 2;
+  }
+}
